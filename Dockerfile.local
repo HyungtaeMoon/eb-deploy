@@ -1,0 +1,4 @@
+FROM            eb-docker:base
+MAINTAINER      blessmht@gamil.com
+
+COPY            .   /srv/project
