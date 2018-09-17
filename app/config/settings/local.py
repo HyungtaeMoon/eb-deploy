@@ -24,6 +24,11 @@ DATABASES = {
 
 STATIC_URL = '/static/'
 
+# Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
+
+# Log
 LOG_DIR = '/var/log/django'
 LOGGING = {
     'version': 1,

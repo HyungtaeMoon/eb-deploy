@@ -6,7 +6,9 @@ DEBUG = False
 ALLOWED_HOSTS = secrets['ALLOWED_HOSTS']
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
-
+INSTALLED_APPS +=[
+    'storages',
+]
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -17,13 +19,25 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DB
+DATABASES = secrets['DATABASES']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# Media
+DEFAULT_FILE_STORAGE = 'config.storages.S3DefaultStorage'
+AWS_STORAGE_BUCKET_NAME = secrets['AWS_STORAGE_BUCKET_NAME']
+
+# Log
+# /var/log/django 디렉토리가 존재하면 LOG_DIR 그대로 사용
+# 없으면 ROOT_DIR/.log 디렉토리를 사용(없으면 생성)
 
 LOG_DIR = '/var/log/django'
+if not os.path.exists(LOG_DIR):
+    LOG_DIR = os.path.join(ROOT_DIR, '.log')
+    os.makedirs(LOG_DIR, exist_ok=True)
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
