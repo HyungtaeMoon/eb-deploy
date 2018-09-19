@@ -13,6 +13,10 @@ secrets = json.load(open(os.path.join(SECRETS_DIR, 'base.json')))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 
+# Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
+
 # AWS
 AWS_ACCESS_KEY_ID = secrets['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = secrets['AWS_SECRET_ACCESS_KEY']

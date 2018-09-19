@@ -8,7 +8,6 @@ ALLOWED_HOSTS = [
 
 WSGI_APPLICATION = 'config.wsgi.local.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -23,11 +22,6 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Media
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
-
 
 # Log
 LOG_DIR = '/var/log/django'
