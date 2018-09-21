@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# requirements 만들기
-pipenv lock --requirements > requirements.txt
-
-git add -f .secrets/ requirements.txt
+git add -f .secrets/
 
 # eb deploy 실행
 eb deploy --profile sub-baeminchan-django-eb --staged
