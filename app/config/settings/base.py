@@ -24,7 +24,13 @@ AWS_DEFAULT_ACL = secrets['AWS_DEFAULT_ACL']
 AWS_S3_REGION_NAME = secrets['AWS_S3_REGION_NAME']
 AWS_S3_SIGNATURE_VERSION = secrets['AWS_S3_SIGNATURE_VERSION']
 
+ADMIN_USERNAME = 'admin'
+ADMIN_PASSWORD = 'pbkdf2_sha256$120000$0nGEawXV6z82$EN7/MMHb/T0/ifOSot/TX2gcEOt11IgKGEg/RvWpIHo='
 AUTH_USER_MODEL = 'members.User'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'members.backends.SettingsBackend',
+]
 
 INSTALLED_APPS = [
     'members',
