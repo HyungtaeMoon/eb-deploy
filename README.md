@@ -1,5 +1,7 @@
 # MyProject
 
+### 개인 프로젝트 준비 중입니다.
+
 ### Requirements
 
 - python(3.6.5)
